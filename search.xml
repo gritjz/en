@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>my-second-blog</title>
-    <url>/archives/fda4c161.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-  </entry>
-  <entry>
     <title>my-first-blog</title>
     <url>/archives/e53fb0b9.html</url>
     <content><![CDATA[]]></content>
@@ -20,6 +12,14 @@
     <title>my-fourth-Blog</title>
     <url>/archives/191d8ae5.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>my-second-blog</title>
+    <url>/archives/fda4c161.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
   </entry>
   <entry>
     <title>my_third_blog</title>
