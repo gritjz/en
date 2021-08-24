@@ -3,19 +3,46 @@
   <entry>
     <title>Markdown 基础</title>
     <url>/archives/bc7aa6ed.html</url>
-    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a><font color=red>标题</font></h1><p>标题有两种表现形式：</p>
+    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a><font color=red>标题</font></h1><p>标题有两种形式：</p>
 <blockquote>
 <p>第一种,</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一级标题,下面加“=”</span><br><span class="line">=</span><br><span class="line">二级标题,下面加“-”</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
+<pre><code>一级标题,下面加“===”
+===
+二级标题,下面加“---”
+---
+</code></pre>
 <blockquote>
 <p>第二种，</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题  </span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br><span class="line">```  </span><br><span class="line">&gt;**效果如下:**</span><br><span class="line">&gt;&gt;第一种，</span><br><span class="line"></span><br><span class="line">一级标题,下面加“=”</span><br><span class="line">=</span><br><span class="line">二级标题,下面加“-”</span><br><span class="line">-</span><br><span class="line">&gt;&gt; 第二种，</span><br><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题  </span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br><span class="line">**Note:**</span><br><span class="line">1. 只有一二级标题会有下划线</span><br><span class="line">2. 标题和下一行有间距</span><br><span class="line">***</span><br><span class="line"># &lt;font color=red&gt;字体&lt;/font&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>两星是粗体</strong><br><strong>两下滑线是粗体</strong><br><em>单星是斜体</em><br><em>单是斜体</em><br><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=red>我是红色</font><br><font color=#008000>我是绿色</font><br><font color=Blue>我是蓝色</font><br><font size=5>我是尺寸</font><br><font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font></p>
-<table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
-```
+<pre><code># 一级标题  
+## 二级标题  
+### 三级标题  
+#### 四级标题  
+##### 五级标题  
+###### 六级标题
+</code></pre>
+<span id="more"></span>
+<blockquote>
+<p><strong>效果如下:</strong></p>
+<blockquote>
+<p>第一种，</p>
+</blockquote>
+</blockquote>
+<h1 id="一级标题-下面加“-”"><a href="#一级标题-下面加“-”" class="headerlink" title="一级标题,下面加“=”"></a>一级标题,下面加“=”</h1><h2 id="二级标题-下面加“-”"><a href="#二级标题-下面加“-”" class="headerlink" title="二级标题,下面加“-”"></a>二级标题,下面加“-”</h2><blockquote>
+<blockquote>
+<p>第二种，</p>
+</blockquote>
+</blockquote>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p><strong>Note:</strong></p>
+<ol>
+<li>一二级标题会有下划线</li>
+<li>标题和下一行有间距</li>
+<li>Github模式的标题是 === or —, 其他只需要 = or -</li>
+</ol>
+<hr>
+<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a><font color=red>字体</font></h1><p>下面是常用Markdown字体操作，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">**双星是粗体**  </span><br><span class="line">__双下滑线是粗体__</span><br><span class="line">*单星是斜体*</span><br><span class="line">_单下滑线是斜体_</span><br><span class="line">&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;</span><br><span class="line">&lt;font color=red&gt;我是红色&lt;/font&gt;</span><br><span class="line">&lt;font color=#008000&gt;我是绿色&lt;/font&gt;</span><br><span class="line">&lt;font color=Blue&gt;我是蓝色&lt;/font&gt;</span><br><span class="line">&lt;font size=5&gt;我是尺寸&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;黑体&quot; color=green size=5&gt;我是黑体，绿色，尺寸为5&lt;/font&gt;</span><br><span class="line">&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=yellow&gt;背景色yellow&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>效果如下:</strong></p>
@@ -25,6 +52,24 @@
 <table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
 </blockquote>
 <hr>
+<h1 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a><font color=red>分隔线</font></h1><pre><code>***
+* * *
+---
+- - -
+----------
+</code></pre>
+<blockquote>
+<p><strong>效果如下:</strong></p>
+</blockquote>
+<hr>
+<h1 id="删除线-下划线-脚注"><a href="#删除线-下划线-脚注" class="headerlink" title="删除线 | 下划线 | 脚注"></a><font color=red>删除线 | 下划线 | 脚注</font></h1><pre><code>~~DELETE~~
+&lt;u&gt;UNDERLINE&lt;/u&gt;
+</code></pre>
+<blockquote>
+<p><strong>效果如下:</strong><br><del>DELETE</del><br><u>UNDERLINE</u></p>
+</blockquote>
+<hr>
+<h1 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a><font color=red>脚注</font></h1><p><a name="myfootnote1">1</a>: Footnote content goes here<br><sup><a href="#myfootnote1">FOOTNOTE</a></sup><br>I want a footnote <sup>FOOTNOTE</sup>。</p>
 <hr>
 <p>REFERENCES</p>
 <pre><code>https://www.runoob.com/markdown/md-tutorial.html
