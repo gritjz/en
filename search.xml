@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>my-first-blog</title>
-    <url>/archives/e53fb0b9.html</url>
-    <content><![CDATA[]]></content>
+    <title>Markdown 基础</title>
+    <url>/archives/bc7aa6ed.html</url>
+    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a><font color=red>标题</font></h1><p>标题有两种表现形式：</p>
+<blockquote>
+<p>第一种,</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一级标题,下面加“=”</span><br><span class="line">=</span><br><span class="line">二级标题,下面加“-”</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<blockquote>
+<p>第二种，</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题  </span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br><span class="line">```  </span><br><span class="line">&gt;**效果如下:**</span><br><span class="line">&gt;&gt;第一种，</span><br><span class="line"></span><br><span class="line">一级标题,下面加“=”</span><br><span class="line">=</span><br><span class="line">二级标题,下面加“-”</span><br><span class="line">-</span><br><span class="line">&gt;&gt; 第二种，</span><br><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题  </span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br><span class="line">**Note:**</span><br><span class="line">1. 只有一二级标题会有下划线</span><br><span class="line">2. 标题和下一行有间距</span><br><span class="line">***</span><br><span class="line"># &lt;font color=red&gt;字体&lt;/font&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>两星是粗体</strong><br><strong>两下滑线是粗体</strong><br><em>单星是斜体</em><br><em>单是斜体</em><br><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=red>我是红色</font><br><font color=#008000>我是绿色</font><br><font color=Blue>我是蓝色</font><br><font size=5>我是尺寸</font><br><font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font></p>
+<table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
+```
+
+<blockquote>
+<p><strong>效果如下:</strong></p>
+<blockquote>
+</blockquote>
+<p><strong>两星是粗体</strong><br><strong>两下滑线是粗体</strong><br><em>单星是斜体</em><br><em>单是斜体</em><br><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=red>我是红色</font><br><font color=#008000>我是绿色</font><br><font color=Blue>我是蓝色</font><br><font size=5>我是尺寸</font><br><font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font></p>
+<table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
+</blockquote>
+<hr>
+<hr>
+<p>REFERENCES</p>
+<pre><code>https://www.runoob.com/markdown/md-tutorial.html
+https://blog.csdn.net/heimu24/article/details/81189700
+https://blog.csdn.net/qcx321/article/details/53780672
+</code></pre>
+]]></content>
       <categories>
-        <category>T2</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>C# basics</tag>
+        <tag>Markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>my-fourth-Blog</title>
-    <url>/archives/191d8ae5.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>T2</category>
-      </categories>
-      <tags>
-        <tag>C# basics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my-second-blog</title>
-    <url>/archives/fda4c161.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>my_third_blog</title>
-    <url>/archives/703389e0.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
