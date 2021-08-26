@@ -3,7 +3,7 @@
   <entry>
     <title>Markdown Basics for Github Style</title>
     <url>/en/archives/f283b71.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="11"> 前言 </h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\en\assets\css\APlayer.min.css"><script src="\en\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\en\assets\js\Meting.min.js"></script><h1 id="11"> 前言 </h1>
 制作Hexo个人网站时，通常都会使用Markdown作为写文章的工具。虽然之前自学过，但是还是希望重新巩固一下。
 
 <p>本文将包含了Markdown所有的知识点，并配以案例和演示，以及使用过程中的一些tips。文中介绍的Markdown是针对于Github风格的，其他风格也会有所提及。我使用的是Atom来编辑md文件，在Atom中预览markdown文件，只需要<br>点击Packages -&gt; Markdown Preview -&gt; Toggle Github Style</p>
@@ -434,15 +434,15 @@ https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html
         <category>Markdown</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>Markdown</tag>
         <tag>Github</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo NexT 7+ Improvement: Add Global Background Music</title>
     <url>/en/archives/896a89c6.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\en\assets\css\APlayer.min.css"><script src="\en\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\en\assets\js\Meting.min.js"></script><h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
 <p>There are a lot of various articles to introduce the way to add background music to Hexo blog and they are mostly working well inside the post. Once you switch the webpage, the music play will be shutdown with page refresh, which is annoying.</p>
 </blockquote>
 <p>In this post, I will introduce how to add a music player for play global background music with <code>APlayer</code> and <code>MetingJS</code> plugin.</p>
