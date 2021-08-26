@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>Markdown Basics for Github Style</title>
-    <url>/archives/f283b71.html</url>
-    <content><![CDATA[<h1 id="11"> 前言 </h1>
+    <url>/en/archives/f283b71.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="11"> 前言 </h1>
 制作Hexo个人网站时，通常都会使用Markdown作为写文章的工具。虽然之前自学过，但是还是希望重新巩固一下。
 
 <p>本文将包含了Markdown所有的知识点，并配以案例和演示，以及使用过程中的一些tips。文中介绍的Markdown是针对于Github风格的，其他风格也会有所提及。我使用的是Atom来编辑md文件，在Atom中预览markdown文件，只需要<br>点击Packages -&gt; Markdown Preview -&gt; Toggle Github Style</p>
@@ -278,18 +278,41 @@
 </ul>
 <hr>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a><font color=red>代码</font></h1><blockquote>
-<p>Markdown中，将文本转换成代码框体，<br>区块： <strong>`**或 **```</strong><br>代码块：Tab 或 4个空格</p>
+<p>Markdown中，将文本转换成代码框体，<br><br>区块： <strong>`**或 **```</strong> <br><br>代码块：Tab 或 4个空格 或 <strong>```</strong></p>
 </blockquote>
 <pre><code>```Block1```
 `Block2`
     printf(&quot;Hello World&quot;) 代码区块
+
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">printf</span><span class="params">(<span class="string">&quot;Hello World&quot;</span>)</span></span> 代码区块<span class="number">2</span></span><br></pre></td></tr></table></figure>
 </code></pre>
 <blockquote>
 <p><strong>效果如下:</strong></p>
 </blockquote>
 <p><code>Block1</code><br><code>Block2</code></p>
-<pre><code>printf(&quot;Hello World&quot;) 代码区块
+<pre><code>printf(&quot;Hello World&quot;) 代码区块1
 </code></pre>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">printf</span><span class="params">(<span class="string">&quot;Hello World&quot;</span>)</span></span> 代码区块<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>在**```**之后有以下四个选项, 它们可以使得代码高亮。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[language] [title] [url] [link-text]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；</li>
+<li>[title] 是顶部左边的说明，非必须；</li>
+<li>[url] 是顶部右边的超链接地址，非必须；</li>
+<li>[link text] 如它的字面意思，超链接的名称，非必须。</li>
+</ul>
+</blockquote>
+<p>比如，</p>
+<pre><code><figure class="highlight c++"><figcaption><span>C++</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight c++"><figcaption><span>C++</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note:</strong></p>
+<ol>
+<li>这4项根据空格来分隔。除非如果你想写后面两个，但不想写前面两个，那么就必须加 [] 了，要这样写：[] [] [url] [link text]。</li>
+<li>这4项只适用于 <strong>```</strong>, 并不适用于Tab 或 4个空格</li>
+</ol>
 <hr>
 <h1 id="55"> <font color=red>链接</font> </h1>
 >外部链接
@@ -414,6 +437,167 @@ https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html
         <tag>Markdown</tag>
         <tag>Github</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 7+ Improvement: Add Global Background Music</title>
+    <url>/en/archives/896a89c6.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+<p>There are a lot of various articles to introduce the way to add background music to Hexo blog and they are mostly working well inside the post. Once you switch the webpage, the music play will be shutdown with page refresh, which is annoying.</p>
+</blockquote>
+<p>In this post, I will introduce how to add a music player for play global background music with <code>APlayer</code> and <code>MetingJS</code> plugin.</p>
+<blockquote>
+<p>This post is based on</p>
+</blockquote>
+<p><code>Hexo NexT 7.7.2 release</code>.</p>
+<hr>
+<h1 id="Install-APlayer-plugin"><a href="#Install-APlayer-plugin" class="headerlink" title="Install APlayer plugin"></a>Install APlayer plugin</h1><blockquote>
+<p>First of all, you need to install APlayer plugin.</p>
+</blockquote>
+<ul>
+<li>Run following command at Hexo directory.<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install <span class="comment">--save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="Configure-APlayer-and-MetingJS"><a href="#Configure-APlayer-and-MetingJS" class="headerlink" title="Configure APlayer and MetingJS"></a>Configure APlayer and MetingJS</h1><blockquote>
+<p>APlayer can play music list from Netease Music, Tecent Music, Baidu Music, and so on after supporting to MetingJS.</p>
+</blockquote>
+<h2 id="Configure-APlayer"><a href="#Configure-APlayer" class="headerlink" title="Configure APlayer"></a>Configure APlayer</h2><ul>
+<li>To use APlayer, go to your NexT’s configuration file: <code>/Hexo/themes/next/_config.yml</code> and add following script:</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="number">42327220</span></span><br><span class="line">  <span class="attr">server:</span> <span class="string">netease</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">playlist</span></span><br><span class="line">  <span class="attr">auto:</span></span><br><span class="line">  <span class="attr">fixed:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mini:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">autoplay:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="comment">#607d8b</span></span><br><span class="line">  <span class="attr">loop:</span> <span class="string">&#x27;all&#x27;</span></span><br><span class="line">  <span class="attr">order:</span> <span class="string">&#x27;random&#x27;</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="string">&#x27;auto&#x27;</span></span><br><span class="line">  <span class="attr">volume:</span> <span class="number">0.7</span></span><br><span class="line">  <span class="attr">mutex:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">listfolded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">listmaxheight:</span> <span class="string">340px</span></span><br><span class="line">  <span class="attr">storagename:</span> <span class="string">metingjs</span></span><br><span class="line">  <span class="attr">cdn:</span></span><br><span class="line">    <span class="attr">css:</span> <span class="string">https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css</span></span><br><span class="line">    <span class="attr">js:</span> <span class="string">https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js</span></span><br><span class="line">    <span class="attr">meting:</span> <span class="string">https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js</span></span><br></pre></td></tr></table></figure>
+<h2 id="Enable-MetingJS"><a href="#Enable-MetingJS" class="headerlink" title="Enable MetingJS"></a>Enable MetingJS</h2><ul>
+<li>Then, add following script into <code>/Hexo/_config.yml</code> to enable MetingJS:</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span>                                  <span class="comment"># Meting support, default: false</span></span><br></pre></td></tr></table></figure>
+<h2 id="Add-APlayer-and-MetingJS-Script"><a href="#Add-APlayer-and-MetingJS-Script" class="headerlink" title="Add APlayer and MetingJS Script"></a>Add APlayer and MetingJS Script</h2><ul>
+<li>APlayer is confiured at the moment and ready to use by adding following script into front-end pages.</li>
+</ul>
+<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="xml">&#123;% if theme.aplayer.enabled %&#125;</span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- require APlayer --&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.cdn.css</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.cdn.js</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- require MetingJS --&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.cdn.meting</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meting-js</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">server</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.server</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">type</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.type</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">fixed</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.fixed</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">id</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.id</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">auto</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.auto</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">mini</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.mini</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">autoplay</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.autoplay</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">theme</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.theme</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">loop</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.loop</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">order</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.order</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">preload</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.preload</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">volume</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.volume</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">mutex</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.mutex</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">list-folded</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.listfolded</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">list-max-height</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.listmaxheight</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">storage-name</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">aplayer.storagename</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">&quot;</span> &gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">meting-js</span>&gt;</span></span></span><br><span class="line"><span class="xml">&#123;% endif %&#125;</span></span><br><span class="line"><span class="xml"></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>For example,<br>I added it into<code>\Hexo\themes\next\layout\_partials\head\head.swig</code>, then the player bar will be at left-bottom corner of webpage. You can choose any other places, like sidebar, to show this player.</p>
+</blockquote>
+<h2 id="MetingJS-Options"><a href="#MetingJS-Options" class="headerlink" title="MetingJS Options"></a>MetingJS Options</h2><table>
+<thead>
+<tr>
+<th align="left">option</th>
+<th align="center">default</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="center"><strong>require</strong></td>
+<td align="left">song id / playlist id / album id / search keyword</td>
+</tr>
+<tr>
+<td align="left">server</td>
+<td align="center"><strong>require</strong></td>
+<td align="left">music platform: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="center"><strong>require</strong></td>
+<td align="left"><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, <code>artist</code></td>
+</tr>
+<tr>
+<td align="left">auto</td>
+<td align="center">options</td>
+<td align="left">music link, support: <code>netease</code>, <code>tencent</code>, <code>xiami</code></td>
+</tr>
+<tr>
+<td align="left">fixed</td>
+<td align="center"><code>false</code></td>
+<td align="left">enable fixed mode</td>
+</tr>
+<tr>
+<td align="left">mini</td>
+<td align="center"><code>false</code></td>
+<td align="left">enable mini mode</td>
+</tr>
+<tr>
+<td align="left">autoplay</td>
+<td align="center"><code>false</code></td>
+<td align="left">audio autoplay</td>
+</tr>
+<tr>
+<td align="left">theme</td>
+<td align="center"><code>#2980b9</code></td>
+<td align="left">main color</td>
+</tr>
+<tr>
+<td align="left">loop</td>
+<td align="center"><code>all</code></td>
+<td align="left">player loop play, values: ‘all’, ‘one’, ‘none’</td>
+</tr>
+<tr>
+<td align="left">order</td>
+<td align="center"><code>list</code></td>
+<td align="left">player play order, values: ‘list’, ‘random’</td>
+</tr>
+<tr>
+<td align="left">preload</td>
+<td align="center"><code>auto</code></td>
+<td align="left">values: ‘none’, ‘metadata’, ‘auto’</td>
+</tr>
+<tr>
+<td align="left">volume</td>
+<td align="center"><code>0.7</code></td>
+<td align="left">default volume, notice that player will remember user setting, default volume will not work after user set volume themselves</td>
+</tr>
+<tr>
+<td align="left">mutex</td>
+<td align="center"><code>true</code></td>
+<td align="left">prevent to play multiple player at the same time, pause other players when this player start play</td>
+</tr>
+<tr>
+<td align="left">lrc-type</td>
+<td align="center"><code>0</code></td>
+<td align="left">lyric type</td>
+</tr>
+<tr>
+<td align="left">list-folded</td>
+<td align="center"><code>false</code></td>
+<td align="left">indicate whether list should folded at first</td>
+</tr>
+<tr>
+<td align="left">list-max-height</td>
+<td align="center"><code>340px</code></td>
+<td align="left">list max height</td>
+</tr>
+<tr>
+<td align="left">storage-name</td>
+<td align="center"><code>metingjs</code></td>
+<td align="left">localStorage key that store player setting</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Documentation for APlayer can be found at <a href="https://aplayer.js.org/#/home?id=options">https://aplayer.js.org/#/home?id=options</a></p>
+</blockquote>
+<h2 id="Configure-PJAX"><a href="#Configure-PJAX" class="headerlink" title="Configure PJAX"></a>Configure PJAX</h2><blockquote>
+<p>Now, music player is added and should be able to play musics. However, the player will be reset after the webpage refreshes.</p>
+</blockquote>
+<p>To achieve uninterrupted global music playing after the page jumps and refreshes, we need to use <code>PJAX</code>.</p>
+<ul>
+<li>Go to <code>/Hexo/themes/next/layout</code> and find <code>_layout.swig</code>.</li>
+<li>Under <code>&lt;head&gt;</code> tag, add the following script and save.<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--pjax: avoid pausing music --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>Then, go to <code>/Hexo/themes/next/_config.yml</code>, change <code>pjax</code> setting to <code>true</code>.<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation <span class="keyword">on</span> your website.</span><br><span class="line"># Dependencie<span class="variable">s:</span> http<span class="variable">s:</span>//github.<span class="keyword">com</span>/theme-<span class="keyword">next</span>/theme-<span class="keyword">next</span>-pjax</span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>REFERENCES</p>
+<pre><code>https://leezhiy.github.io/
+https://ld246.com/
+https://iluis.gitee.io/
+</code></pre>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>APlayer</tag>
+        <tag>MetingJS</tag>
+        <tag>Pjax</tag>
       </tags>
   </entry>
 </search>
